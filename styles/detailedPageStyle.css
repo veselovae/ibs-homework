@@ -80,6 +80,12 @@
     font-size: 1.5rem;
     border-left: none;
     border-right: none;
+    text-align: center;
+}
+
+.product-quantity::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 .add-to-cart {

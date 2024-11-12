@@ -32,6 +32,11 @@
                         d="M14.5 0C12.76 0 11.09 0.81 10 2.09C8.91 0.81 7.24 0 5.5 0C2.42 0 0 2.42 0 5.5C0 9.28 3.4 12.36 8.55 17.04L10 18.35L11.45 17.03C16.6 12.36 20 9.28 20 5.5C20 2.42 17.58 0 14.5 0ZM10.1 15.55L10 15.65L9.9 15.55C5.14 11.24 2 8.39 2 5.5C2 3.5 3.5 2 5.5 2C7.04 2 8.54 2.99 9.07 4.36H10.94C11.46 2.99 12.96 2 14.5 2C16.5 2 18 3.5 18 5.5C18 8.39 14.86 11.24 10.1 15.55Z"
                     />
                 </g>
+                <g id="favoriteActive">
+                    <path
+                        d="M10 18.35L8.55 17.03C3.4 12.36 0 9.28 0 5.5C0 2.42 2.42 0 5.5 0C7.24 0 8.91 0.81 10 2.09C11.09 0.81 12.76 0 14.5 0C17.58 0 20 2.42 20 5.5C20 9.28 16.6 12.36 11.45 17.04L10 18.35Z"
+                    />
+                </g>
             </defs>
         </svg>
         <header>
@@ -60,40 +65,15 @@
         <main class="detailed-page-container">
             <div class="product-card">
                 <div class="product-img-wrapper">
-                    <img src="./assets/productImg.png" alt="product-photo" />
+                    <img src="" alt="product-photo" class="product-img" />
                 </div>
                 <div class="product-info">
-                    <h4 class="product-name">G Home</h4>
-                    <p class="product-description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Sed ultrices ante sit amet mollis luctus. Morbi semper,
-                        tellus in finibus tristique, purus odio sodales sem,
-                        vitae dignissim enim metus vel purus. Quisque a rutrum
-                        leo. Phasellus quis ex sed magna finibus convallis
-                        varius luctus justo. Nullam et sapien vel magna ultrices
-                        pulvinar. Nunc felis ante, lobortis eget imperdiet in,
-                        iaculis at justo. Etiam libero nisl, hendrerit vitae
-                        ultricies vitae, pharetra a est. Vivamus vestibulum quam
-                        sit amet facilisis consequat. Curabitur sollicitudin
-                        arcu arcu, pretium aliquam nibh hendrerit a. Donec diam
-                        massa, tempus sed pulvinar a, fermentum et orci.
-                    </p>
+                    <h4 class="product-name"></h4>
+                    <p class="product-description"></p>
                     <h5 class="product-details-title">Details</h5>
-                    <p class="product-details-description">
-                        Nulla et mauris sed elit semper pretium a quis augue.
-                        Fusce tempus est ex, eu porttitor nulla auctor et.
-                        Maecenas eget quam non risus porta elementum.
-                        Pellentesque posuere augue in malesuada fermentum.
-                        Maecenas vitae viverra mauris. Suspendisse a cursus
-                        libero. Pellentesque vitae purus eget lectus lobortis
-                        laoreet sed sollicitudin diam. Pellentesque pellentesque
-                        eu justo at ullamcorper. Quisque quis egestas magna.
-                        Vestibulum et felis id nisi dapibus viverra vel vitae
-                        nisl. Morbi lobortis nunc turpis, sed tincidunt quam
-                        cursus nec. Morbi eget lorem dolor.
-                    </p>
+                    <p class="product-details-description"></p>
                     <div class="product-feat-box">
-                        <span class="product-price">$129</span>
+                        <span class="product-price"></span>
                         <div class="product-quantity-box">
                             <button class="quantity-btn reduce-btn">
                                 <svg
@@ -105,7 +85,12 @@
                                     <use xlink:href="#minus" />
                                 </svg>
                             </button>
-                            <span class="product-quantity">1</span>
+                            <!-- <span class="product-quantity">1</span> -->
+                            <input
+                                type="number"
+                                class="product-quantity"
+                                value="1"
+                            />
                             <button class="quantity-btn increase-btn">
                                 <svg
                                     width="14"
@@ -133,5 +118,7 @@
                 </div>
             </div>
         </main>
+
+        <script type="module" src="./scripts/detailedPageScript.js"></script>
     </body>
 </html>
