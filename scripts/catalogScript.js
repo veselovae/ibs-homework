@@ -10,9 +10,13 @@ const renderCatalogItems = async (data) => {
         const itemElementCopy = itemTemplate.content.cloneNode(true);
 
         itemElementCopy.querySelector(".item-name").textContent = item.name;
-        itemElementCopy.querySelector(".item-price").textContent =
-            "$ " + item.price.value;
+        itemElementCopy.querySelector(
+            ".item-price"
+        ).textContent = `$${item.price.value}`;
         itemElementCopy.querySelector(".item-photo").setAttribute("src", img);
+        itemElementCopy
+            .querySelector(".item-photo")
+            .setAttribute("alt", item.name);
 
         itemElementCopy
             .querySelector(".favorite-btn")
@@ -20,8 +24,6 @@ const renderCatalogItems = async (data) => {
 
         catalog.appendChild(itemElementCopy);
     });
-
-    catalog.style.display = "flex";
 };
 
 let catalogItems;
@@ -29,28 +31,37 @@ let catalogItems;
 // отрисовать данные с сервера после загрузки страницы
 const initCatalogList = async () => {
     catalogItems = await getCatalogItems();
-
     await renderCatalogItems(catalogItems);
 };
 document.addEventListener("DOMContentLoaded", initCatalogList);
 
-const filterSearchResults = async () => {
-    const searchParam = document.querySelector(".search-input").value;
-    const catalog = document.querySelector(".catalog");
+// отфильтровать данные по запросу
+const filterSearchResults = (initialData) => {
+    const searchParam = document
+        .querySelector(".search-input")
+        .value.toLowerCase();
 
-    const filteresData = catalogItems.filter((el) =>
-        el.name.toLowerCase().includes(searchParam.toLowerCase())
+    const filteredData = initialData.filter((el) =>
+        el.name.toLowerCase().includes(searchParam)
     );
+
+    return filteredData;
+};
+
+// отрисовать данные после фильтрации
+const rerenderCatalogByFiltering = async () => {
+    const catalog = document.querySelector(".catalog");
 
     const template = catalog.children[0];
     removeAllChildren(catalog);
     catalog.appendChild(template);
 
-    await renderCatalogItems(filteresData);
+    const filtered = filterSearchResults(catalogItems);
+    await renderCatalogItems(filtered);
 };
 
 const searchInputElement = document.querySelector(".search-input");
 searchInputElement.addEventListener(
     "input",
-    debounce(filterSearchResults, 800)
+    debounce(rerenderCatalogByFiltering, 800)
 );

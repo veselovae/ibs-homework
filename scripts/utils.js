@@ -1,6 +1,6 @@
 export const removeAllChildren = (parent) => {
     while (parent.firstChild) {
-        parent.removeChild(parent.firstChild);
+        parent.removeChild(parent.lastChild);
     }
 };
 
@@ -14,13 +14,5 @@ export const debounce = (callback, delay) => {
 
 export const changeFavoriteIcon = (event) => {
     const favoriteBtn = event.currentTarget;
-    const use = favoriteBtn.querySelector("use");
-
-    if (use.getAttribute("xlink:href") === "#favorite") {
-        use.setAttribute("xlink:href", "#favoriteActive");
-        use.parentElement.classList.add("active");
-    } else {
-        use.setAttribute("xlink:href", "#favorite");
-        use.parentElement.classList.remove("active");
-    }
+    favoriteBtn.querySelector(".favorite-icon").classList.toggle("active");
 };

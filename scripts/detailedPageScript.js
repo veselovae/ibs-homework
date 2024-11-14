@@ -9,13 +9,15 @@ const renderItemCard = async () => {
     const itemCard = document.querySelector(".product-card");
 
     itemCard.querySelector(".product-img").setAttribute("src", itemImg);
+    itemCard.querySelector(".product-img").setAttribute("alt", item.name);
     itemCard.querySelector(".product-name").textContent = item.name;
     itemCard.querySelector(".product-description").textContent =
         item.description;
     itemCard.querySelector(".product-details-description").textContent =
         item.details;
-    itemCard.querySelector(".product-price").textContent =
-        "$" + item.price.value;
+    itemCard.querySelector(
+        ".product-price"
+    ).textContent = `$${item.price.value}`;
 };
 
 renderItemCard();
@@ -27,7 +29,9 @@ document
 
 // увеличение количества товара
 const increaseQuantityOfProduct = () => {
-    const currentQuantity = +document.querySelector(".product-quantity").value;
+    const currentQuantity = Number(
+        document.querySelector(".product-quantity").value
+    );
     document.querySelector(".product-quantity").value = currentQuantity + 1;
 };
 document
@@ -38,7 +42,7 @@ document
 const reduceQuantityOfProduct = () => {
     let productQuantityElem = document.querySelector(".product-quantity");
 
-    if (+productQuantityElem.value > 1) {
+    if (Number(productQuantityElem.value) > 1) {
         productQuantityElem.value -= 1;
     }
 };
@@ -48,7 +52,9 @@ document
 
 //исправление 0 или отрицательного количества товара
 const checkProductQuantity = () => {
-    const currentQuantity = +document.querySelector(".product-quantity").value;
+    const currentQuantity = Number(
+        document.querySelector(".product-quantity").value
+    );
     if (currentQuantity <= 0) {
         document.querySelector(".product-quantity").value = 1;
     }
