@@ -65,13 +65,13 @@ header > .search-box > input:focus {
     fill: #959595;
 }
 
-.favorite-icon .favorite-svg-use,
-.favorite-icon.active .favorite-active-svg-use {
+.favorite-icon:not(.active) .favorite-svg-use,
+.favorite-icon:has(.active) .favorite-active-svg-use {
     display: block;
 }
 
-.favorite-icon .favorite-active-svg-use,
-.favorite-icon.active .favorite-svg-use {
+.favorite-icon:not(.active) .favorite-active-svg-use,
+.favorite-icon:has(.active) .favorite-svg-use {
     display: none;
 }
 

@@ -16,3 +16,11 @@ export const changeFavoriteIcon = (event) => {
     const favoriteBtn = event.currentTarget;
     favoriteBtn.querySelector(".favorite-icon").classList.toggle("active");
 };
+
+export const getElements = (parentElem, params = {}) => {
+    const elements = {};
+    for (let key of Object.keys(params)) {
+        elements[key] = parentElem.querySelector(`${params[key]}`);
+    }
+    return elements;
+};
