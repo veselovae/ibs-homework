@@ -1,30 +1,26 @@
 import { changeFavoriteIcon } from "./utils.js";
-import { renderItemCard } from "./detailedPage_functions/renderItemCard.js";
+import { renderItemCard } from "./detailedPageFunctions/renderItemCard.js";
 import {
     increaseQuantityOfProduct,
     reduceQuantityOfProduct,
     checkProductQuantity,
-} from "./detailedPage_functions/quantityFucntions.js";
+} from "./detailedPageFunctions/quantityFucntions.js";
+import { getItemButtons, getItemQuantityElement } from "./getElements.util.js";
 
 // отрисовка карточки товара
 renderItemCard();
 
+const { increaseBtn, reduceBtn, favoriteBtn } = getItemButtons(document);
+
 // добавление функционала к кнопке "в избранное"
-document
-    .querySelector(".favorite-btn")
-    .addEventListener("click", changeFavoriteIcon);
+favoriteBtn.addEventListener("click", changeFavoriteIcon);
 
 // увеличение количества товара
-document
-    .querySelector(".increase-btn")
-    .addEventListener("click", increaseQuantityOfProduct);
+increaseBtn.addEventListener("click", increaseQuantityOfProduct);
 
 // уменьшение количества товара
-document
-    .querySelector(".reduce-btn")
-    .addEventListener("click", reduceQuantityOfProduct);
+reduceBtn.addEventListener("click", reduceQuantityOfProduct);
 
 //исправление 0 или отрицательного количества товара
-document
-    .querySelector(".product-quantity")
-    .addEventListener("change", checkProductQuantity);
+const { quantity } = getItemQuantityElement(document);
+quantity.addEventListener("change", checkProductQuantity);

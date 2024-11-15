@@ -1,4 +1,4 @@
-import { getElements } from "./getElements.js";
+import { getCatalogItemElements } from "../getElements.util.js";
 import { getItemPhoto } from "../api.js";
 import { changeFavoriteIcon } from "../utils.js";
 
@@ -10,14 +10,14 @@ export const renderCatalogItems = async (data) => {
         const img = await getItemPhoto(item.picture.path);
         const itemElementCopy = itemTemplate.content.cloneNode(true);
 
-        const { nameElement, priceElement, photoElement, favButtonElement } =
-            getElements(itemElementCopy);
+        const { title, price, image, favoriteBtn } =
+            getCatalogItemElements(itemElementCopy);
 
-        nameElement.textContent = item.name;
-        priceElement.textContent = `$${item.price.value}`;
-        photoElement.setAttribute("src", img);
-        photoElement.setAttribute("alt", item.name);
-        favButtonElement.addEventListener("click", changeFavoriteIcon);
+        title.textContent = item.name;
+        price.textContent = `$${item.price.value}`;
+        image.setAttribute("src", img);
+        image.setAttribute("alt", item.name);
+        favoriteBtn.addEventListener("click", changeFavoriteIcon);
 
         catalog.appendChild(itemElementCopy);
     });
