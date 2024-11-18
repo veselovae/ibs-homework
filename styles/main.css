@@ -65,6 +65,16 @@ header > .search-box > input:focus {
     fill: #959595;
 }
 
+.favorite-icon:not(.active) .favorite-svg-use,
+.favorite-icon:has(.active) .favorite-active-svg-use {
+    display: block;
+}
+
+.favorite-icon:not(.active) .favorite-active-svg-use,
+.favorite-icon:has(.active) .favorite-svg-use {
+    display: none;
+}
+
 .favorite-icon.active {
     fill: #e97f03;
 }
