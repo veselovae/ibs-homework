@@ -1,9 +1,7 @@
 export const getElements = (parentElement, params) => {
-    const elements = {};
-
-    Object.entries(params).forEach(([key, value]) => {
-        elements[key] = parentElement.querySelector(value);
-    });
-
-    return elements;
+    return Object.fromEntries(
+        Object.entries(params).map(([key, value]) => {
+            return [key, parentElement.querySelector(value)];
+        })
+    );
 };
