@@ -1,3 +1,6 @@
+import "../assets/styles/main.css";
+import "../assets/styles/detailedPageStyle.css";
+
 import { changeFavoriteIcon } from "./utils.js";
 import { renderItemCard } from "./detailedPageFunctions/renderItemCard.js";
 import {

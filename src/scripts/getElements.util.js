@@ -2,6 +2,7 @@ import { getElements } from "./getElements.js";
 
 export const getCatalogItemElements = (itemElement) => {
     return getElements(itemElement, {
+        wrapper: ".catalog-item",
         title: ".item-name",
         image: ".item-photo",
         price: ".item-price",

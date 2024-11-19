@@ -1,3 +1,6 @@
+import "../assets/styles/main.css";
+import "../assets/styles/catalogStyle.css";
+
 import { getCatalogItems } from "./api.js";
 import { debounce } from "./utils.js";
 import { renderCatalogItems } from "./catalogFunctions/renderCatalogItems.js";
