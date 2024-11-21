@@ -74,10 +74,6 @@ module.exports = {
                 test: /\.css$/,
                 use: ["style-loader", "css-loader"],
             },
-            // {
-            //     test: /\.(png|jpg|svg|gif)$/,
-            //     use: ["file-loader"],
-            // },
             {
                 test: /\.(?:js|mjs|cjs)$/,
                 exclude: /node_modules/,
