@@ -1,7 +1,10 @@
-import { getCatalogItems } from "./api.js";
-import { debounce } from "./utils.js";
-import { renderCatalogItems } from "./catalogFunctions/renderCatalogItems.js";
-import { rerenderCatalogByFiltering } from "./catalogFunctions/rerenderCatalogByFiltering.js";
+import "@styles/main.css";
+import "@styles/catalogStyle.css";
+
+import { getCatalogItems } from "@scripts/api.js";
+import { debounce } from "@scripts/utils.js";
+import { renderCatalogItems } from "@catalogFunc/renderCatalogItems.js";
+import { rerenderCatalogByFiltering } from "@catalogFunc/rerenderCatalogByFiltering.js";
 
 export let catalogItems;
 

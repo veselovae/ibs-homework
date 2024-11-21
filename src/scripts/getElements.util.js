@@ -1,7 +1,8 @@
-import { getElements } from "./getElements.js";
+import { getElements } from "@scripts/getElements.js";
 
 export const getCatalogItemElements = (itemElement) => {
     return getElements(itemElement, {
+        wrapper: ".catalog-item",
         title: ".item-name",
         image: ".item-photo",
         price: ".item-price",

@@ -1,6 +1,6 @@
-import { getCatalogItemElements } from "../getElements.util.js";
-import { getItemPhoto } from "../api.js";
-import { changeFavoriteIcon } from "../utils.js";
+import { getCatalogItemElements } from "@scripts/getElements.util.js";
+import { getItemPhoto } from "@scripts/api.js";
+import { stopOpeningCard, openProductCard } from "@scripts/utils.js";
 
 export const renderCatalogItems = async (data) => {
     const catalog = document.querySelector(".catalog");
@@ -10,14 +10,17 @@ export const renderCatalogItems = async (data) => {
         const img = await getItemPhoto(item.picture.path);
         const itemElementCopy = itemTemplate.content.cloneNode(true);
 
-        const { title, price, image, favoriteBtn } =
+        const { wrapper, title, price, image, favoriteBtn } =
             getCatalogItemElements(itemElementCopy);
 
+        wrapper.addEventListener("click", () =>
+            openProductCard("detailedPage.html")
+        );
         title.textContent = item.name;
         price.textContent = `$${item.price.value}`;
         image.setAttribute("src", img);
         image.setAttribute("alt", item.name);
-        favoriteBtn.addEventListener("click", changeFavoriteIcon);
+        favoriteBtn.addEventListener("click", stopOpeningCard);
 
         catalog.appendChild(itemElementCopy);
     });

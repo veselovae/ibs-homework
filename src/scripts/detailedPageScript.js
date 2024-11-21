@@ -1,10 +1,13 @@
+import "@styles/main.css";
+import "@styles/detailedPageStyle.css";
+
 import { changeFavoriteIcon } from "./utils.js";
-import { renderItemCard } from "./detailedPageFunctions/renderItemCard.js";
+import { renderItemCard } from "@detailedFunc/renderItemCard.js";
 import {
     increaseQuantityOfProduct,
     reduceQuantityOfProduct,
     checkProductQuantity,
-} from "./detailedPageFunctions/quantityFucntions.js";
+} from "@detailedFunc/quantityFucntions.js";
 import { getItemButtons, getItemQuantityElement } from "./getElements.util.js";
 
 // отрисовка карточки товара
