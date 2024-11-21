@@ -1,5 +1,5 @@
-import { getCatalogItem, getItemPhoto } from "../api.js";
-import { getItemElements } from "../getElements.util.js";
+import { getCatalogItem, getItemPhoto } from "@scripts/api.js";
+import { getItemElements } from "@scripts/getElements.util.js";
 
 export const renderItemCard = async () => {
     const item = await getCatalogItem("571fc60d-ea2c-469e-a5b6-c229d31f195d");

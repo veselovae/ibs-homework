@@ -1,4 +1,4 @@
-import { getElements } from "./getElements.js";
+import { getElements } from "@scripts/getElements.js";
 
 export const getCatalogItemElements = (itemElement) => {
     return getElements(itemElement, {

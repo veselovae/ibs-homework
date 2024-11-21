@@ -51,6 +51,20 @@ module.exports = {
         compress: true,
         port: 9000,
     },
+    resolve: {
+        alias: {
+            "@styles": path.resolve(__dirname, "src/assets/styles"),
+            "@catalogFunc": path.resolve(
+                __dirname,
+                "src/scripts/catalogFunctions"
+            ),
+            "@detailedFunc": path.resolve(
+                __dirname,
+                "src/scripts/detailedPageFunctions"
+            ),
+            "@scripts": path.resolve(__dirname, "src/scripts"),
+        },
+    },
     plugins: [
         new HtmlWebpackPlugin({
             template: "./index.html",

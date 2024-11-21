@@ -1,7 +1,7 @@
-import { removeAllChildren } from "../utils.js";
-import { filterSearchResults } from "./filterSearchResults.js";
-import { renderCatalogItems } from "./renderCatalogItems.js";
-import { catalogItems } from "../catalogScript.js";
+import { removeAllChildren } from "@scripts/utils.js";
+import { filterSearchResults } from "@catalogFunc/filterSearchResults.js";
+import { renderCatalogItems } from "@catalogFunc/renderCatalogItems.js";
+import { catalogItems } from "@scripts/catalogScript.js";
 
 export const rerenderCatalogByFiltering = async () => {
     const catalog = document.querySelector(".catalog");

@@ -1,6 +1,6 @@
-import { getCatalogItemElements } from "../getElements.util.js";
-import { getItemPhoto } from "../api.js";
-import { stopOpeningCard, openProductCard } from "../utils.js";
+import { getCatalogItemElements } from "@scripts/getElements.util.js";
+import { getItemPhoto } from "@scripts/api.js";
+import { stopOpeningCard, openProductCard } from "@scripts/utils.js";
 
 export const renderCatalogItems = async (data) => {
     const catalog = document.querySelector(".catalog");
